@@ -1,0 +1,140 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.95);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.6);
+  background: rgba(15, 23, 42, 1);
+}
+
+.btn {
+  margin-left: auto;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.7);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(168, 85, 247, 0.28));
+  color: var(--text-main);
+  font-size: 0.8rem;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-med), transform var(--transition-fast),
+    box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 211, 238, 1);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+}
+
+.list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.4rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.9);
+}
+
+.list-table thead {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.22), transparent);
+}
+
+.list-table th,
+.list-table td {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.95);
+}
+
+.list-table th {
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--text-soft);
+}
+
+.list-table tbody tr {
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.list-table tbody tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.96);
+}
+.list-table tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.list-table tbody tr:hover {
+  background: rgba(76, 29, 149, 0.65);
+  transform: translateY(-1px);
+}
+
+.list-table td:last-child {
+  white-space: nowrap;
+}
+
+.list-table a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.78rem;
+  margin-right: 0.35rem;
+}
+
+.list-table a:hover {
+  text-decoration: underline;
+}
+
+.list-table button {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.7);
+  background: rgba(239, 68, 68, 0.12);
+  color: #fecaca;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.list-table button:hover {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: rgba(248, 113, 113, 1);
+  transform: translateY(-1px);
+}

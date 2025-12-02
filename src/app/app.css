@@ -1,0 +1,103 @@
+.container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1.75rem 2rem 2.4rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.06),
+      transparent 40%,
+      rgba(168, 85, 247, 0.06)
+    ),
+    var(--shell-bg);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(var(--blur-strong));
+  position: relative;
+  overflow: hidden;
+  animation: floatIn 680ms var(--transition-med);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  inset: -120px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.25), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.2), transparent 55%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1 {
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+h1::before {
+  content: '';
+  width: 9px;
+  height: 24px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  animation: pulseAccent 2.4s infinite;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.main-nav a {
+  position: relative;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), background var(--transition-fast),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 0 0, rgba(34, 211, 238, 0.3), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+}
+
+.main-nav a:hover::after {
+  opacity: 1;
+}
+
+.main-nav a.active {
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.08);
+}
+
+router-outlet {
+  display: block;
+  margin-top: 0.75rem;
+}

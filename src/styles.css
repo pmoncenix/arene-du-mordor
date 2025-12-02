@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+:root {
+  --bg-body: #020617;
+  --bg-gradient: radial-gradient(circle at 0% 0%, #1e293b 0, #020617 55%, #000 100%);
+  --shell-bg: rgba(15, 23, 42, 0.9);
+  --card-bg: rgba(15, 23, 42, 0.96);
+  --card-bg-soft: rgba(15, 23, 42, 0.88);
+  --field-bg: rgba(15, 23, 42, 0.9);
+
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --border-strong: rgba(148, 163, 184, 0.65);
+
+  --accent: #22d3ee;
+  --accent-2: #a855f7;
+  --accent-soft: rgba(34, 211, 238, 0.16);
+
+  --text-main: #e5e7eb;
+  --text-soft: #9ca3af;
+  --text-muted: #6b7280;
+  --danger: #fb7185;
+
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 999px;
+
+  --transition-fast: 150ms ease-out;
+  --transition-med: 220ms ease-out;
+  --blur-strong: 24px;
+}
+
+body {
+  background: var(--bg-gradient), var(--bg-body);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 999px;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpToast {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseAccent {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(34, 211, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-soft);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
