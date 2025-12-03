@@ -4,6 +4,7 @@ import { HeroList } from './components/hero-list/hero-list';
 import { HeroEdit } from './components/hero-edit/hero-edit';
 import { WeaponList } from './components/weapon-list/weapon-list';
 import { WeaponEdit } from './components/weapon-edit/weapon-edit';
+import { Fight } from './components/fight/fight';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'weapons', component: WeaponList },
   { path: 'weapons/new', component: WeaponEdit },
   { path: 'weapons/:id', component: WeaponEdit },
+  { path: 'fight', component: Fight },
 
   { path: '**', redirectTo: '/dashboard' }
 ];

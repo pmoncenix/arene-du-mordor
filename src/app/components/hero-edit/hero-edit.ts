@@ -91,12 +91,20 @@ export class HeroEdit implements OnInit, OnDestroy {
     this.sub?.unsubscribe();
   }
 
+  private toNumber(value: unknown): number {
+    if (value === null || value === undefined || value === '') {
+      return 0;
+    }
+    const n = Number(value);
+    return isNaN(n) ? 0 : n;
+  }
+
   totalPoints(): number {
     const v = this.heroForm.value;
-    const a = v.attack ?? 0;
-    const e = v.dodge ?? 0;
-    const d = v.damage ?? 0;
-    const p = v.hp ?? 0;
+    const a = this.toNumber(v.attack);
+    const e = this.toNumber(v.dodge);
+    const d = this.toNumber(v.damage);
+    const p = this.toNumber(v.hp);
     return a + e + d + p;
   }
 
@@ -106,10 +114,10 @@ export class HeroEdit implements OnInit, OnDestroy {
 
   totalPointsValidator(): ValidatorFn {
     return (control: AbstractControl) => {
-      const a = control.get('attack')?.value ?? 0;
-      const e = control.get('dodge')?.value ?? 0;
-      const d = control.get('damage')?.value ?? 0;
-      const p = control.get('hp')?.value ?? 0;
+      const a = this.toNumber(control.get('attack')?.value);
+      const e = this.toNumber(control.get('dodge')?.value);
+      const d = this.toNumber(control.get('damage')?.value);
+      const p = this.toNumber(control.get('hp')?.value);
       const sum = a + e + d + p;
       return sum <= HERO_MAX_POINTS ? null : { totalPoints: { sum } };
     };
@@ -124,10 +132,10 @@ export class HeroEdit implements OnInit, OnDestroy {
   canEquipWeapon(weapon: Weapon | undefined): boolean {
     if (!weapon) return true;
     const v = this.heroForm.value;
-    const a = (v.attack ?? 0) + weapon.attack;
-    const e = (v.dodge ?? 0) + weapon.dodge;
-    const d = (v.damage ?? 0) + weapon.damage;
-    const p = (v.hp ?? 0) + weapon.hp;
+    const a = this.toNumber(v.attack) + weapon.attack;
+    const e = this.toNumber(v.dodge) + weapon.dodge;
+    const d = this.toNumber(v.damage) + weapon.damage;
+    const p = this.toNumber(v.hp) + weapon.hp;
     return a >= 1 && e >= 1 && d >= 1 && p >= 1;
   }
 

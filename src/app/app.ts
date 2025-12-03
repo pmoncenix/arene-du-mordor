@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { NgIf } from '@angular/common';
 import { Messages } from './components/messages/messages';
 
 @Component({
@@ -11,5 +10,5 @@ import { Messages } from './components/messages/messages';
   styleUrl: './app.css'
 })
 export class App {
-  title = 'Tour Of Heroes - Éditeur';
+  title = 'Arènes du Mordor';
 }

@@ -1,0 +1,221 @@
+.arena {
+  margin-top: 1rem;
+  animation: fadeInSoft 360ms ease-out;
+}
+
+.arena h2 {
+  margin: 0 0 0.3rem 0;
+}
+
+.subtitle {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.fighters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  align-items: stretch;
+  position: relative;
+}
+
+.fighter-card {
+  padding: 1rem 1.1rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.fighter-card h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.fighter-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 0.6rem;
+}
+
+.fighter-card select {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: var(--field-bg);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.fighter-card select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.7);
+  background: #020617;
+}
+
+.weapon-line {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.weapon-line span {
+  color: var(--accent);
+}
+
+.weapon-line.none span {
+  color: var(--text-muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 0.8rem;
+}
+
+.stat span:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+}
+
+.stat span:last-child {
+  font-variant-numeric: tabular-nums;
+}
+
+.vs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b1120;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.9), 0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.actions button {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition-med), border-color var(--transition-med),
+    transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.actions button:first-child {
+  border-color: rgba(34, 211, 238, 0.9);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.38), rgba(168, 85, 247, 0.4));
+  color: var(--text-main);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+}
+
+.actions button:first-child:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 1);
+}
+
+.actions button:first-child:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+}
+
+.actions button.ghost {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.6);
+  color: var(--text-soft);
+}
+
+.actions button.ghost:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: rgba(148, 163, 184, 1);
+}
+
+.actions button.ghost:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.result {
+  margin-top: 1.4rem;
+  padding: 0.9rem 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+  animation: slideUpToast 260ms ease-out;
+}
+
+.winner {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.winner span {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.log h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--text-muted);
+}
+
+.log ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  font-size: 0.8rem;
+}
+
+.log li {
+  padding: 0.18rem 0;
+  border-top: 1px dashed rgba(31, 41, 55, 0.9);
+}
+
+.log li:first-child {
+  border-top: none;
+}
